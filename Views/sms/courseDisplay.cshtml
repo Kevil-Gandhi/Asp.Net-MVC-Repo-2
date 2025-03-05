@@ -1,0 +1,25 @@
+﻿
+@model List<course>;
+
+	<table class="table table-bordered table-striped">
+
+        <thead>
+            <tr> 
+                <th> Course Id</th> 
+                <th> Course Name</th> 
+                <th> Delete </th> 
+            </tr>
+        </thead>
+
+        <tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td> @item.cId </td>
+				<td> @item.cName </td>
+				<td> <a asp-controller="sms" asp-action="courseDelete" asp-route-cId="@item.cId" onclick="return confirm('Are you sure to want to Delete ?');"> Delete </a> </td>
+			</tr>
+		}
+        </tbody>
+
+</table>

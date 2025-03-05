@@ -1,0 +1,29 @@
+﻿@model List<student>;
+
+<table class="table table-bordered table-striped">
+
+	<thead>
+		<tr>
+			<th> Student Id</th>
+			<th> Student Name</th>
+			<th> Student Email</th>
+			<th> Course Id</th>
+			<th colspan="2"> Action </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td> @item.sId </td>
+				<td> @item.sName </td>
+				<td> @item.sEmail </td>
+				<td> @item.cId </td>
+				<td> <a asp-controller="sms" asp-action="studentDelete" asp-route-sId="@item.sId" onclick="return confirm('Are you sure to want to Delete ?');"> Delete </a> </td>
+				<td> <a asp-controller="sms" asp-action="studentupdate" asp-route-sId="@item.sId" > Update </a> </td>
+			</tr>
+		}
+	</tbody>
+
+</table>

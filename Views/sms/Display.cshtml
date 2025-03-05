@@ -1,0 +1,29 @@
+﻿
+@model List<studCourse>;
+
+<table class="table table-bordered table-striped">
+
+	<thead>
+		<tr>
+			<th> Student Id</th>
+			<th> Student Name</th>
+			<th> Student Email</th>
+			<th> Course Id</th>
+			<th> Course Name </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td> @item.sId </td>
+				<td> @item.sName </td>
+				<td> @item.sEmail </td>
+				<td> @item.cId </td>
+				<td> @item.cName </td>
+			</tr>
+		}
+	</tbody>
+
+</table>
